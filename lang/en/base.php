@@ -12,6 +12,8 @@ return [
     |
     */
 
+    'panel_name' => 'Administrator (Hero)',
+
     'description' => 'A powerful and intuitive admin panel for managing your application with ease and efficiency.',
 
     'sections' => [

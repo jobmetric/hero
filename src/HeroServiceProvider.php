@@ -32,11 +32,11 @@ class HeroServiceProvider extends PackageCoreServiceProvider
     public function afterBootPackage(): void
     {
         Panelio::addPanel('hero', [
-            'name' => config('hero.panel_name'),
+            'name' => 'hero::base.panel_name',
             'namespace' => 'JobMetric\Hero\Http\Controllers',
             'args' => [
                 'description' => trans('hero::base.description'),
-                'icon' => 'fas fa-user-shield',
+                'icon' => '<i class="ki-duotone ki-abstract-25 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
             ],
             'permission' => 'hero',
             'position' => 0,
