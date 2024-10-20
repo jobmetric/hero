@@ -30,7 +30,7 @@
         "ext-json": "*",
         "laravel/framework": ">=9.19",
         "jobmetric/laravel-package-core": "^1.12",
-        "jobmetric/panelio": "^1.1"
+        "jobmetric/panelio": "^1.2"
     },
     "autoload": {
         "files": [
