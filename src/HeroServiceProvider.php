@@ -35,7 +35,7 @@ class HeroServiceProvider extends PackageCoreServiceProvider
             'name' => 'hero::base.panel_name',
             'namespace' => 'JobMetric\Hero\Http\Controllers',
             'args' => [
-                'description' => trans('hero::base.description'),
+                'description' => 'hero::base.description',
                 'icon' => '<i class="ki-duotone ki-abstract-25 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
             ],
             'permission' => 'hero',
@@ -43,9 +43,9 @@ class HeroServiceProvider extends PackageCoreServiceProvider
         ]);
 
         Panelio::addSection('hero', 'content', [
-            'name' => trans('hero::base.sections.content.name'),
+            'name' => 'hero::base.sections.content.name',
             'args' => [
-                'title' => trans('hero::base.sections.content.title'),
+                'title' => 'hero::base.sections.content.title',
                 'icon' => 'fas fa-user-shield',
             ],
             'permission' => 'hero.content',
@@ -54,7 +54,7 @@ class HeroServiceProvider extends PackageCoreServiceProvider
 
         Panelio::addMenu('hero', 'content', [
             'type' => 'group',
-            'name' => trans('hero::base.sections.content.menus.products'),
+            'name' => 'hero::base.sections.content.menus.products',
             'permission' => 'hero.content.products',
             'position' => 0
         ]);
