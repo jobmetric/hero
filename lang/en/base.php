@@ -19,11 +19,12 @@ return [
     'sections' => [
         'content' => [
             'name' => 'Content',
-            'title' => 'Content',
-            'menus' => [
-                'products' => 'Products',
-            ],
+            'title' => 'Content Management',
         ],
+    ],
+
+    'dashboard' => [
+        'title' => 'Hero Dashboard',
     ],
 
 ];

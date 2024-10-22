@@ -5,6 +5,7 @@ namespace JobMetric\Hero;
 use JobMetric\Hero\Providers\EventServiceProvider;
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
+use JobMetric\PackageCore\Exceptions\ViewFolderNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Panelio;
@@ -14,12 +15,14 @@ class HeroServiceProvider extends PackageCoreServiceProvider
 {
     /**
      * @throws RegisterClassTypeNotFoundException
+     * @throws ViewFolderNotFoundException
      */
     public function configuration(PackageCore $package): void
     {
         $package->name('hero')
             ->hasConfig()
             ->hasTranslation()
+            ->hasView()
             ->registerClass('event', EventServiceProvider::class, RegisterClassTypeEnum::REGISTER())
             ->registerClass('Hero', Hero::class, RegisterClassTypeEnum::SINGLETON());
     }
@@ -46,17 +49,10 @@ class HeroServiceProvider extends PackageCoreServiceProvider
             'name' => 'hero::base.sections.content.name',
             'args' => [
                 'title' => 'hero::base.sections.content.title',
-                'icon' => 'fas fa-user-shield',
+                'icon' => '<i class="ki-duotone ki-abstract-26 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
             ],
             'permission' => 'hero.content',
             'position' => 0,
-        ]);
-
-        Panelio::addMenu('hero', 'content', [
-            'type' => 'group',
-            'name' => 'hero::base.sections.content.menus.products',
-            'permission' => 'hero.content.products',
-            'position' => 0
         ]);
     }
 }

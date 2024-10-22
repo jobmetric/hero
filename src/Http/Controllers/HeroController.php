@@ -4,6 +4,7 @@ namespace JobMetric\Hero\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use JobMetric\Panelio\Http\Controllers\Controller;
 
 class HeroController extends Controller
 {
@@ -14,8 +15,10 @@ class HeroController extends Controller
      *
      * @return View
      */
-    public function index(Request $request): View
+    public function index(Request $request)
     {
-        return view('hero::index');
+        DomiTitle(trans('hero::base.dashboard.title'));
+
+        return view('hero::dashboard');
     }
 }
