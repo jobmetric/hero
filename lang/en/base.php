@@ -24,7 +24,7 @@ return [
     ],
 
     'dashboard' => [
-        'title' => 'Hero Dashboard',
+        'title' => 'Administrator Dashboard (Hero)',
     ],
 
 ];
