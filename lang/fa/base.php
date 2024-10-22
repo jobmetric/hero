@@ -25,6 +25,14 @@ return [
 
     'dashboard' => [
         'title' => 'داشبورد پنل ادمین (Hero)',
+        'tiles' => [
+            'users' => 'کاربران',
+            'roles' => 'نقش‌ها',
+            'media' => 'رسانه',
+            'logs' => 'گزارشات',
+            'activity' => 'فعالیت',
+            'settings' => 'تنظیمات',
+        ],
     ],
 
 ];

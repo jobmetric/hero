@@ -25,6 +25,14 @@ return [
 
     'dashboard' => [
         'title' => 'Administrator Dashboard (Hero)',
+        'tiles' => [
+            'users' => 'Users',
+            'roles' => 'Roles',
+            'media' => 'Media',
+            'logs' => 'Logs',
+            'activity' => 'Activity',
+            'settings' => 'Settings',
+        ],
     ],
 
 ];
