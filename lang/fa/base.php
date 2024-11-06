@@ -20,6 +20,37 @@ return [
         'content' => [
             'name' => 'محتوا',
             'title' => 'مدیریت محتوا',
+            'menus' => [
+                'group_product' => 'محصول و خدمت',
+            ]
+        ],
+        'sell' => [
+            'name' => 'فروش',
+            'title' => 'مدیریت فروش',
+            'menus' => [
+                'group_sell' => 'فروش',
+                'group_advertising_and_marketing' => 'تبلیغات و بازاریابی',
+                'group_financial_management' => 'مدیریت مالی',
+            ]
+        ],
+        'account' => [
+            'name' => 'حساب‌های کاربری',
+            'title' => 'حساب‌های کاربری',
+            'menus' => [
+                'group_customer' => 'مشتری‌ها',
+                'department' => 'دپارتمان‌ها',
+            ]
+        ],
+        'system' => [
+            'name' => 'مدیریت',
+            'title' => 'مدیریت سیستم',
+            'menus' => [
+                'group_plugins_and_modules' => 'افزونه‌ها و ماژول‌ها',
+            ],
+        ],
+        'report' => [
+            'name' => 'گزارشات',
+            'title' => 'گزارشات مدیریتی',
         ],
     ],
 
@@ -32,6 +63,25 @@ return [
             'logs' => 'گزارشات',
             'activity' => 'فعالیت',
             'settings' => 'تنظیمات',
+        ],
+    ],
+
+    'category_type' => [
+        'department' => [
+            'label' => 'دپارتمان‌ها',
+            'description' => 'تمام دپارتمان‌های سازمانی در اینجا قرار دارند.',
+            'translation' => [
+                'name' => [
+                    'label' => 'نام',
+                    'info' => 'نام دپارتمان',
+                    'placeholder' => 'نام دپارتمان را وارد کنید',
+                ],
+                'description' => [
+                    'label' => 'توضیحات',
+                    'info' => 'توضیحات دپارتمان',
+                    'placeholder' => 'توضیحات دپارتمان را وارد کنید',
+                ],
+            ],
         ],
     ],
 

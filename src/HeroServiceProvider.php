@@ -2,6 +2,7 @@
 
 namespace JobMetric\Hero;
 
+use JobMetric\Hero\Events\HeroBootedEvent;
 use JobMetric\Hero\Providers\EventServiceProvider;
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
@@ -34,25 +35,6 @@ class HeroServiceProvider extends PackageCoreServiceProvider
 
     public function afterBootPackage(): void
     {
-        Panelio::addPanel('hero', [
-            'name' => 'hero::base.panel_name',
-            'namespace' => 'JobMetric\Hero\Http\Controllers',
-            'args' => [
-                'description' => 'hero::base.description',
-                'icon' => '<i class="ki-duotone ki-abstract-25 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
-            ],
-            'permission' => 'hero',
-            'position' => 0,
-        ]);
-
-        Panelio::addSection('hero', 'content', [
-            'name' => 'hero::base.sections.content.name',
-            'args' => [
-                'title' => 'hero::base.sections.content.title',
-                'icon' => '<i class="ki-duotone ki-abstract-26 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
-            ],
-            'permission' => 'hero.content',
-            'position' => 0,
-        ]);
+        event(new HeroBootedEvent);
     }
 }
