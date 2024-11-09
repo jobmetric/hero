@@ -114,7 +114,7 @@ class AddPanelMenuListeners
         Panelio::addMenu('hero', 'account', [
             'type' => 'link',
             'name' => 'hero::base.sections.account.menus.department',
-            'link' => route('category.{type}.index', [
+            'link' => route('taxonomy.{type}.index', [
                 'panel' => 'hero',
                 'section' => 'account',
                 'type' => 'department',

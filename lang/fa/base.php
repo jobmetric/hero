@@ -66,7 +66,7 @@ return [
         ],
     ],
 
-    'category_type' => [
+    'taxonomy_type' => [
         'department' => [
             'label' => 'دپارتمان‌ها',
             'description' => 'تمام دپارتمان‌های سازمانی در اینجا قرار دارند.',
