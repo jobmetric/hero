@@ -45,6 +45,7 @@ return [
             'name' => 'مدیریت',
             'title' => 'مدیریت سیستم',
             'menus' => [
+                'language' => 'زبان‌ها',
                 'group_plugins_and_modules' => 'افزونه‌ها و ماژول‌ها',
             ],
         ],

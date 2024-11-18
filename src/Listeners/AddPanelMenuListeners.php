@@ -126,6 +126,18 @@ class AddPanelMenuListeners
 
         // added group menu for system section
         Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.language',
+            'link' => route('language.language.index', [
+                'panel' => 'hero',
+                'section' => 'system'
+            ]),
+            'icon' => '<i class="ki-duotone ki-icon {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 10,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
             'type' => 'group',
             'name' => 'hero::base.sections.system.menus.group_plugins_and_modules',
             'permission' => '',

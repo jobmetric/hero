@@ -20,6 +20,38 @@ return [
         'content' => [
             'name' => 'Content',
             'title' => 'Content Management',
+            'menus' => [
+                'group_product' => 'Product and Service',
+            ]
+        ],
+        'sell' => [
+            'name' => 'Sell',
+            'title' => 'Sell Management',
+            'menus' => [
+                'group_sell' => 'Sell',
+                'group_advertising_and_marketing' => 'Advertising and Marketing',
+                'group_financial_management' => 'Financial Management',
+            ]
+        ],
+        'account' => [
+            'name' => 'Accounts',
+            'title' => 'Accounts',
+            'menus' => [
+                'group_customer' => 'Customers',
+                'department' => 'Departments',
+            ]
+        ],
+        'system' => [
+            'name' => 'System',
+            'title' => 'System Management',
+            'menus' => [
+                'language' => 'Languages',
+                'group_plugins_and_modules' => 'Plugins and Modules',
+            ],
+        ],
+        'report' => [
+            'name' => 'Reports',
+            'title' => 'Management Reports',
         ],
     ],
 
@@ -32,6 +64,25 @@ return [
             'logs' => 'Logs',
             'activity' => 'Activity',
             'settings' => 'Settings',
+        ],
+    ],
+
+    'taxonomy_type' => [
+        'department' => [
+            'label' => 'Departments',
+            'description' => 'Departments',
+            'translation' => [
+                'name' => [
+                    'label' => 'Name',
+                    'info' => 'Department name',
+                    'placeholder' => 'Enter department name',
+                ],
+                'description' => [
+                    'label' => 'Description',
+                    'info' => 'Department description',
+                    'placeholder' => 'Enter department description',
+                ],
+            ],
         ],
     ],
 
