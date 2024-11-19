@@ -139,9 +139,28 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('hero', 'system', [
             'type' => 'group',
-            'name' => 'hero::base.sections.system.menus.group_plugins_and_modules',
+            'name' => 'hero::base.sections.system.menus.group_places_and_regions',
             'permission' => '',
             'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.country',
+            'link' => route('location.location_country.index', [
+                'panel' => 'hero',
+                'section' => 'system'
+            ]),
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 101,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'group',
+            'name' => 'hero::base.sections.system.menus.group_plugins_and_modules',
+            'permission' => '',
+            'position' => 200,
         ]);
     }
 }
