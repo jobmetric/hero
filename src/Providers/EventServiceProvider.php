@@ -16,8 +16,8 @@ class EventServiceProvider extends ServiceProvider
             \JobMetric\Hero\Listeners\AddPanelMenuListeners::class,
         ],
 
-        \JobMetric\Taxonomy\Events\TaxonomyTypeEvent::class => [
+        /*\JobMetric\Taxonomy\Events\TaxonomyTypeEvent::class => [
             \JobMetric\Hero\Listeners\AddTaxonomyTypeDepartmentListeners::class
-        ],
+        ],*/
     ];
 }
