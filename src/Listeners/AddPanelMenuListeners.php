@@ -2,8 +2,8 @@
 
 namespace JobMetric\Hero\Listeners;
 
-use JobMetric\Panelio\Facades\Panelio;
 use JobMetric\Hero\Events\HeroBootedEvent;
+use JobMetric\Panelio\Facades\Panelio;
 
 class AddPanelMenuListeners
 {
@@ -90,8 +90,35 @@ class AddPanelMenuListeners
         ]);
 
         Panelio::addMenu('hero', 'sell', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.sell.menus.orders',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('hero', 'sell', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.sell.menus.invoices',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('hero', 'sell', [
             'type' => 'group',
             'name' => 'hero::base.sections.sell.menus.group_advertising_and_marketing',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'sell', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.sell.menus.campaign',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 100,
         ]);
@@ -103,12 +130,39 @@ class AddPanelMenuListeners
             'position' => 200,
         ]);
 
+        Panelio::addMenu('hero', 'sell', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.sell.menus.transaction',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 200,
+        ]);
+
         // added group menu for account section
         Panelio::addMenu('hero', 'account', [
-            'type' => 'group',
-            'name' => 'hero::base.sections.account.menus.group_customer',
+            'type' => 'link',
+            'name' => 'hero::base.sections.account.menus.users',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 0,
+        ]);
+
+        Panelio::addMenu('hero', 'account', [
+            'type' => 'group',
+            'name' => 'hero::base.sections.account.menus.group_employee',
+            'permission' => '',
+            'position' => 10,
+        ]);
+
+        Panelio::addMenu('hero', 'account', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.account.menus.employee',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 10,
         ]);
 
         Panelio::addMenu('hero', 'account', [
@@ -122,6 +176,31 @@ class AddPanelMenuListeners
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 10,
+        ]);
+
+        Panelio::addMenu('hero', 'account', [
+            'type' => 'group',
+            'name' => 'hero::base.sections.account.menus.group_report',
+            'permission' => '',
+            'position' => 20,
+        ]);
+
+        Panelio::addMenu('hero', 'account', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.account.menus.activity_logs',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 20,
+        ]);
+
+        Panelio::addMenu('hero', 'account', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.account.menus.wallet_transaction',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 20,
         ]);
 
         // added group menu for system section
@@ -153,14 +232,87 @@ class AddPanelMenuListeners
             ]),
             'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
             'permission' => '',
-            'position' => 101,
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.province',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.city',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.district',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.geo_zone',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'group',
+            'name' => 'hero::base.sections.system.menus.group_support',
+            'permission' => '',
+            'position' => 200,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.ticket_status',
+            'link' => route('taxonomy.{type}.index', [
+                'panel' => 'hero',
+                'section' => 'system',
+                'type' => 'ticket_status',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 200,
         ]);
 
         Panelio::addMenu('hero', 'system', [
             'type' => 'group',
             'name' => 'hero::base.sections.system.menus.group_plugins_and_modules',
             'permission' => '',
-            'position' => 200,
+            'position' => 300,
+        ]);
+
+        // added group menu for report section
+        Panelio::addMenu('hero', 'report', [
+            'type' => 'group',
+            'name' => 'hero::base.sections.report.menus.group_system',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('hero', 'report', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.report.menus.system_change_logs',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 0,
         ]);
     }
 }

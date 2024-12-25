@@ -29,31 +29,51 @@ return [
             "title" => "مدیریت فروش",
             "menus" => [
                 "group_sell" => "فروش",
+                "orders" => "مدیریت سفارشات",
+                "invoices" => "مدیریت فاکتورها",
                 "group_advertising_and_marketing" => "تبلیغات و بازاریابی",
+                "campaign" => "مدیریت کمپین‌ها",
                 "group_financial_management" => "مدیریت مالی",
+                "transaction" => "مدیریت تراکنش‌ها",
             ]
         ],
         "account" => [
             "name" => "حساب‌های کاربری",
             "title" => "حساب‌های کاربری",
             "menus" => [
-                "group_customer" => "مشتری‌ها",
+                "users" => "کاربران",
+                "group_employee" => "کارمندان و پرسنل",
+                "employee" => "کارمندان",
                 "department" => "دپارتمان‌ها",
+                "group_report" => "گزارشات",
+                "activity_logs" => "گزارش فعالیت‌ها",
+                "wallet_transaction" => "تراکنش‌های کیف پول",
             ]
         ],
         "system" => [
             "name" => "مدیریت",
             "title" => "مدیریت سیستم",
             "menus" => [
+                "setting" => "تنظیمات",
                 "language" => "زبان‌ها",
                 "group_places_and_regions" => "مکان‌ها و مناطق",
                 "country" => "کشورها",
+                "province" => "استان‌ها",
+                "city" => "شهرها",
+                "district" => "منطقه‌ها",
+                "geo_zone" => "مناطق جغرافیایی",
+                "group_support" => "پشتیبانی",
+                "ticket_status" => "وضعیت‌های تیکت",
                 "group_plugins_and_modules" => "افزونه‌ها و ماژول‌ها",
             ],
         ],
         "report" => [
             "name" => "گزارشات",
             "title" => "گزارشات مدیریتی",
+            "menus" => [
+                "group_system" => "گزارشات سیستم",
+                "system_change_logs" => "گزارش تغییرات سیستم",
+            ],
         ],
     ],
 
@@ -74,15 +94,22 @@ return [
             "label" => "دپارتمان‌ها",
             "description" => "تمام دپارتمان‌های سازمانی در اینجا قرار دارند.",
             "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام دپارتمان",
-                    "placeholder" => "نام دپارتمان را وارد کنید",
-                ],
                 "description" => [
                     "label" => "توضیحات",
                     "info" => "توضیحات دپارتمان",
                     "placeholder" => "توضیحات دپارتمان را وارد کنید",
+                ],
+            ],
+        ],
+
+        "ticket_status" => [
+            "label" => "وضعیت‌های تیکت",
+            "description" => "تمام وضعیت‌های تیکت‌ها در اینجا قرار دارند.",
+            "translation" => [
+                "description" => [
+                    "label" => "توضیحات",
+                    "info" => "توضیحات وضعیت تیکت",
+                    "placeholder" => "توضیحات وضعیت تیکت را وارد کنید",
                 ],
             ],
         ],

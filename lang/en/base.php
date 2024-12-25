@@ -86,6 +86,18 @@ return [
                 ],
             ],
         ],
+
+        "ticket_status" => [
+            "label" => "Ticket Status",
+            "description" => "Ticket status",
+            "translation" => [
+                "description" => [
+                    "label" => "Description",
+                    "info" => "Ticket status description",
+                    "placeholder" => "Enter ticket status description",
+                ],
+            ],
+        ],
     ],
 
 ];

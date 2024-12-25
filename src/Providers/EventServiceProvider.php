@@ -13,11 +13,9 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         \JobMetric\Hero\Events\HeroBootedEvent::class => [
+            \JobMetric\Hero\Listeners\AddSettingTypeListeners::class,
+            \JobMetric\Hero\Listeners\AddTaxonomyTypeListeners::class,
             \JobMetric\Hero\Listeners\AddPanelMenuListeners::class,
         ],
-
-        /*\JobMetric\Taxonomy\Events\TaxonomyTypeEvent::class => [
-            \JobMetric\Hero\Listeners\AddTaxonomyTypeDepartmentListeners::class
-        ],*/
     ];
 }
