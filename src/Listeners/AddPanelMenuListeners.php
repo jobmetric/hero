@@ -2,15 +2,16 @@
 
 namespace JobMetric\Hero\Listeners;
 
-use JobMetric\Hero\Events\HeroBootedEvent;
+use Illuminate\Support\Facades\DB;
 use JobMetric\Panelio\Facades\Panelio;
+use JobMetric\Taxonomy\Models\Taxonomy;
 
 class AddPanelMenuListeners
 {
     /**
      * Handle the event.
      */
-    public function handle(HeroBootedEvent $event): void
+    public function handle(): void
     {
         Panelio::addPanel('hero', [
             'name' => 'hero::base.panel_name',
@@ -76,10 +77,57 @@ class AddPanelMenuListeners
         // added menu for content section
         Panelio::addMenu('hero', 'content', [
             'type' => 'group',
-            'name' => 'hero::base.sections.content.menus.group_product',
+            'name' => 'hero::base.sections.content.menus.group_menu',
             'permission' => '',
             'position' => 0,
         ]);
+
+        Panelio::addMenu('hero', 'content', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.content.menus.menu_configuration',
+            'link' => route('taxonomy.{type}.index', [
+                'panel' => 'hero',
+                'section' => 'content',
+                'type' => 'menu',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('hero', 'content', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.content.menus.menu_manager',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-calendar-8 fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        $taxonomy_table = config('taxonomy.tables.taxonomy');
+        $translation_table = config('translation.tables.translation');
+        $locale = app()->getLocale();
+        DB::query()->from($taxonomy_table . ' as taxonomy')
+            ->select('taxonomy.id as id', 't.value as name')
+            ->leftJoin($translation_table . ' as t', function ($join) use ($locale) {
+                $join->on('t.translatable_id', '=', 'taxonomy.id')
+                    ->where('t.translatable_type', '=', Taxonomy::class)
+                    ->where('t.locale', '=', $locale)
+                    ->where('t.key', '=', 'name');
+            })
+            ->where('taxonomy.type', 'menu')
+            ->get()->each(function ($menu) {
+                Panelio::addSubmenu('hero', 'content', 'hero::base.sections.content.menus.menu_manager', [
+                    'name' => $menu->name,
+                    'link' => route('taxonomy.{type}.index', [
+                        'panel' => 'hero',
+                        'section' => 'content',
+                        'type' => 'menu_' . $menu->id,
+                    ]),
+                    'permission' => '',
+                    'position' => 0,
+                ]);
+            });
 
         // added group menu for sale section
         Panelio::addMenu('hero', 'sell', [
@@ -204,6 +252,19 @@ class AddPanelMenuListeners
         ]);
 
         // added group menu for system section
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.configuration',
+            'link' => route('setting.{type}.index', [
+                'panel' => 'hero',
+                'section' => 'system',
+                'type' => 'hero_config',
+            ]),
+            'icon' => '<i class="ki-duotone ki-icon {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 10,
+        ]);
+
         Panelio::addMenu('hero', 'system', [
             'type' => 'link',
             'name' => 'hero::base.sections.system.menus.language',

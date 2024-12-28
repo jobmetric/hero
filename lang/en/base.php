@@ -21,7 +21,8 @@ return [
             "name" => "Content",
             "title" => "Content Management",
             "menus" => [
-                "group_product" => "Product and Service",
+                "group_menu" => "Menu and List",
+                "menu" => "Menu Management",
             ]
         ],
         "sell" => [
@@ -29,31 +30,51 @@ return [
             "title" => "Sell Management",
             "menus" => [
                 "group_sell" => "Sell",
+                "orders" => "Order Management",
+                "invoices" => "Invoice Management",
                 "group_advertising_and_marketing" => "Advertising and Marketing",
+                "campaign" => "Campaign Management",
                 "group_financial_management" => "Financial Management",
+                "transaction" => "Transaction Management",
             ]
         ],
         "account" => [
             "name" => "Accounts",
             "title" => "Accounts",
             "menus" => [
-                "group_customer" => "Customers",
+                "users" => "Users",
+                "group_employee" => "Employees and Staff",
+                "employee" => "Employees",
                 "department" => "Departments",
+                "group_report" => "Reports",
+                "activity_logs" => "Activity Logs",
+                "wallet_transaction" => "Wallet Transactions",
             ]
         ],
         "system" => [
             "name" => "System",
             "title" => "System Management",
             "menus" => [
+                "setting" => "Settings",
                 "language" => "Languages",
                 "group_places_and_regions" => "Places and Regions",
                 "country" => "Countries",
+                "province" => "Provinces",
+                "city" => "Cities",
+                "district" => "Districts",
+                "geo_zone" => "Geo Zones",
+                "group_support" => "Support",
+                "ticket_status" => "Ticket Statuses",
                 "group_plugins_and_modules" => "Plugins and Modules",
             ],
         ],
         "report" => [
             "name" => "Reports",
             "title" => "Management Reports",
+            "menus" => [
+                "group_system" => "System",
+                "system_change_logs" => "System Change Logs",
+            ],
         ],
     ],
 
@@ -70,6 +91,18 @@ return [
     ],
 
     "taxonomy_type" => [
+        "menu" => [
+            "label" => "Menu Configuration",
+            "description" => "In this section, you can manage various types of menus and lists.",
+            "translation" => [
+                "description" => [
+                    "label" => "Description",
+                    "info" => "Menu description",
+                    "placeholder" => "Enter menu description",
+                ],
+            ],
+        ],
+
         "department" => [
             "label" => "Departments",
             "description" => "Departments",

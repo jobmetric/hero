@@ -21,7 +21,9 @@ return [
             "name" => "محتوا",
             "title" => "مدیریت محتوا",
             "menus" => [
-                "group_product" => "محصول و خدمت",
+                "group_menu" => "منو و لیست",
+                "menu_configuration" => "پیکربندی منو",
+                "menu_manager" => "مدیریت منوها",
             ]
         ],
         "sell" => [
@@ -54,7 +56,7 @@ return [
             "name" => "مدیریت",
             "title" => "مدیریت سیستم",
             "menus" => [
-                "setting" => "تنظیمات",
+                "configuration" => "تنظیمات کلی",
                 "language" => "زبان‌ها",
                 "group_places_and_regions" => "مکان‌ها و مناطق",
                 "country" => "کشورها",
@@ -90,6 +92,18 @@ return [
     ],
 
     "taxonomy_type" => [
+        "menu" => [
+            "label" => "پیکربندی منو",
+            "description" => "در این قسمت میتوانید انواع منوها و لیست ها را مدیریت کنید.",
+            "translation" => [
+                "description" => [
+                    "label" => "توضیحات",
+                    "info" => "توضیحات منو",
+                    "placeholder" => "توضیحات منو را وارد کنید",
+                ],
+            ],
+        ],
+
         "department" => [
             "label" => "دپارتمان‌ها",
             "description" => "تمام دپارتمان‌های سازمانی در اینجا قرار دارند.",
@@ -110,6 +124,20 @@ return [
                     "label" => "توضیحات",
                     "info" => "توضیحات وضعیت تیکت",
                     "placeholder" => "توضیحات وضعیت تیکت را وارد کنید",
+                ],
+            ],
+        ],
+    ],
+
+    "setting_type" => [
+        "hero_config" => [
+            "label" => "تنظیمات کلی سیستم",
+            "description" => "تنظیمات کلی سیستم مدیریتی",
+            "tab" => [
+                "general" => [
+                    "label" => "عمومی",
+                    "group_base_label" => "تنظیمات پایه",
+                    "site_name" => "نام سایت",
                 ],
             ],
         ],
