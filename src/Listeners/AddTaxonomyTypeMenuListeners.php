@@ -3,6 +3,7 @@
 namespace JobMetric\Hero\Listeners;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use JobMetric\CustomField\CustomFieldBuilder;
 use JobMetric\Taxonomy\Facades\TaxonomyType;
 use JobMetric\Translation\ServiceType\TranslationBuilder;
@@ -33,14 +34,17 @@ class AddTaxonomyTypeMenuListeners
                 });
             });
 
-        DB::query()
-            ->from(config('taxonomy.tables.taxonomy'))
-            ->select('id')
-            ->where('type', 'menu')
-            ->get()->each(function ($menu) {
-                TaxonomyType::define('menu_' . $menu->id)
-                    ->changeStatusInList()
-                    ->baseMedia();
-            });
+        $taxonomy_table = config('taxonomy.tables.taxonomy');
+        if (Schema::hasTable($taxonomy_table)) {
+            DB::query()
+                ->from($taxonomy_table)
+                ->select('id')
+                ->where('type', 'menu')
+                ->get()->each(function ($menu) {
+                    TaxonomyType::define('menu_' . $menu->id)
+                        ->changeStatusInList()
+                        ->baseMedia();
+                });
+        }
     }
 }

@@ -3,6 +3,7 @@
 namespace JobMetric\Hero\Listeners;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use JobMetric\Panelio\Facades\Panelio;
 use JobMetric\Taxonomy\Models\Taxonomy;
 
@@ -107,27 +108,30 @@ class AddPanelMenuListeners
         $taxonomy_table = config('taxonomy.tables.taxonomy');
         $translation_table = config('translation.tables.translation');
         $locale = app()->getLocale();
-        DB::query()->from($taxonomy_table . ' as taxonomy')
-            ->select('taxonomy.id as id', 't.value as name')
-            ->leftJoin($translation_table . ' as t', function ($join) use ($locale) {
-                $join->on('t.translatable_id', '=', 'taxonomy.id')
-                    ->where('t.translatable_type', '=', Taxonomy::class)
-                    ->where('t.locale', '=', $locale)
-                    ->where('t.key', '=', 'name');
-            })
-            ->where('taxonomy.type', 'menu')
-            ->get()->each(function ($menu) {
-                Panelio::addSubmenu('hero', 'content', 'hero::base.sections.content.menus.menu_manager', [
-                    'name' => $menu->name,
-                    'link' => route('taxonomy.{type}.index', [
-                        'panel' => 'hero',
-                        'section' => 'content',
-                        'type' => 'menu_' . $menu->id,
-                    ]),
-                    'permission' => '',
-                    'position' => 0,
-                ]);
-            });
+
+        if (Schema::hasTable($taxonomy_table)) {
+            DB::query()->from($taxonomy_table . ' as taxonomy')
+                ->select('taxonomy.id as id', 't.value as name')
+                ->leftJoin($translation_table . ' as t', function ($join) use ($locale) {
+                    $join->on('t.translatable_id', '=', 'taxonomy.id')
+                        ->where('t.translatable_type', '=', Taxonomy::class)
+                        ->where('t.locale', '=', $locale)
+                        ->where('t.key', '=', 'name');
+                })
+                ->where('taxonomy.type', 'menu')
+                ->get()->each(function ($menu) {
+                    Panelio::addSubmenu('hero', 'content', 'hero::base.sections.content.menus.menu_manager', [
+                        'name' => $menu->name,
+                        'link' => route('taxonomy.{type}.index', [
+                            'panel' => 'hero',
+                            'section' => 'content',
+                            'type' => 'menu_' . $menu->id,
+                        ]),
+                        'permission' => '',
+                        'position' => 0,
+                    ]);
+                });
+        }
 
         // added group menu for sale section
         Panelio::addMenu('hero', 'sell', [
