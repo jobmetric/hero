@@ -32,7 +32,8 @@
         "jobmetric/laravel-package-core": "^1.18.6",
         "jobmetric/panelio": "^1.15.3",
         "jobmetric/laravel-taxonomy": "^3.1.1",
-        "jobmetric/laravel-language": "^1.12"
+        "jobmetric/laravel-language": "^1.12",
+        "jobmetric/laravel-payment-method": "^1.0"
     },
     "autoload": {
         "files": [
