@@ -58,6 +58,9 @@ return [
             "menus" => [
                 "configuration" => "تنظیمات کلی",
                 "language" => "زبان‌ها",
+                "group_sms" => "تنظیمات پیامک",
+                "sms_gateway" => "درگاه پیامک",
+                "sms" => "لیست پیامک‌ها",
                 "group_places_and_regions" => "مکان‌ها و مناطق",
                 "country" => "کشورها",
                 "province" => "استان‌ها",
@@ -67,6 +70,7 @@ return [
                 "group_support" => "پشتیبانی",
                 "ticket_status" => "وضعیت‌های تیکت",
                 "group_plugins_and_modules" => "افزونه‌ها و ماژول‌ها",
+                "payment_method" => "روش‌های پرداخت",
             ],
         ],
         "report" => [

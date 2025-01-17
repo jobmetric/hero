@@ -57,6 +57,9 @@ return [
             "menus" => [
                 "setting" => "Settings",
                 "language" => "Languages",
+                "group_sms" => "SMS Management",
+                "sms_gateway" => "SMS Gateways",
+                "sms" => "SMS",
                 "group_places_and_regions" => "Places and Regions",
                 "country" => "Countries",
                 "province" => "Provinces",
@@ -66,6 +69,7 @@ return [
                 "group_support" => "Support",
                 "ticket_status" => "Ticket Statuses",
                 "group_plugins_and_modules" => "Plugins and Modules",
+                "payment_method" => "Payment Methods",
             ],
         ],
         "report" => [

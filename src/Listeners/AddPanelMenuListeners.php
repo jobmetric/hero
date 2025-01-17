@@ -283,6 +283,37 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('hero', 'system', [
             'type' => 'group',
+            'name' => 'hero::base.sections.system.menus.group_sms',
+            'permission' => '',
+            'position' => 50,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.sms_gateway',
+            'link' => route('sms.sms-gateway.index', [
+                'panel' => 'hero',
+                'section' => 'system'
+            ]),
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 51,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.sms',
+            'link' => route('sms.sms.index', [
+                'panel' => 'hero',
+                'section' => 'system'
+            ]),
+            'icon' => '<i class="ki-duotone ki-pointers {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>',
+            'permission' => '',
+            'position' => 51,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'group',
             'name' => 'hero::base.sections.system.menus.group_places_and_regions',
             'permission' => '',
             'position' => 100,
@@ -361,6 +392,19 @@ class AddPanelMenuListeners
             'name' => 'hero::base.sections.system.menus.group_plugins_and_modules',
             'permission' => '',
             'position' => 300,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.payment_method',
+            'link' => route('extension.{type}.index', [
+                'panel' => 'hero',
+                'section' => 'system',
+                'type' => 'payment-method',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 301,
         ]);
 
         // added group menu for report section
