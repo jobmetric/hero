@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use JobMetric\CustomField\CustomFieldBuilder;
 use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\ServiceType\TranslationBuilder;
+use JobMetric\Translation\Typeify\TranslationBuilder;
 use Throwable;
 
 class AddTaxonomyTypeMenuListeners

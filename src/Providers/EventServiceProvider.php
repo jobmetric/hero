@@ -13,6 +13,7 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         \JobMetric\Hero\Events\HeroBootEvent::class => [
+            \JobMetric\Hero\Listeners\AddDefaultAssetsListeners::class,
             \JobMetric\Hero\Listeners\AddSettingTypeListeners::class,
             \JobMetric\Hero\Listeners\TaxonomyTypeDepartmentListeners::class,
             \JobMetric\Hero\Listeners\TaxonomyTypeTicketStatusListeners::class,
@@ -22,6 +23,10 @@ class EventServiceProvider extends ServiceProvider
         \JobMetric\Language\Events\Language\SetLocaleEvent::class => [
             \JobMetric\Hero\Listeners\SetTaxonomyTypeLabelFieldMenuListeners::class,
             \JobMetric\Hero\Listeners\AddPanelMenuListeners::class,
+        ],
+
+        \JobMetric\Rolix\Events\RegisterPathPermissionEvent::class => [
+            \JobMetric\Hero\Listeners\AddContextPermissionListeners::class,
         ],
     ];
 }

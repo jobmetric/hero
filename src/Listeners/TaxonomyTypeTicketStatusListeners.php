@@ -4,7 +4,7 @@ namespace JobMetric\Hero\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
 use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\ServiceType\TranslationBuilder;
+use JobMetric\Translation\Typeify\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeTicketStatusListeners
@@ -21,8 +21,8 @@ class TaxonomyTypeTicketStatusListeners
             ->description('hero::base.taxonomy_type.ticket_status.description')
             ->showDescriptionInList()
             ->changeStatusInList()
-            ->importInList()
-            ->exportInList()
+            ->import()
+            ->export()
             ->translation(function (TranslationBuilder $translationBuilder) {
                 $translationBuilder->customField(function (CustomFieldBuilder $customFieldBuilder) {
                     $customFieldBuilder::text()

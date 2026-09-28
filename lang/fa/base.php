@@ -71,6 +71,7 @@ return [
                 "ticket_status" => "وضعیت‌های تیکت",
                 "group_plugins_and_modules" => "افزونه‌ها و ماژول‌ها",
                 "payment_method" => "روش‌های پرداخت",
+                "product_assets" => "رابط‌های دارایی",
             ],
         ],
         "report" => [

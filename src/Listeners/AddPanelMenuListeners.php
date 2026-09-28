@@ -397,10 +397,23 @@ class AddPanelMenuListeners
         Panelio::addMenu('hero', 'system', [
             'type' => 'link',
             'name' => 'hero::base.sections.system.menus.payment_method',
-            'link' => route('extension.{type}.index', [
+            'link' => route('extension.index', [
                 'panel' => 'hero',
                 'section' => 'system',
                 'type' => 'payment-method',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 301,
+        ]);
+
+        Panelio::addMenu('hero', 'system', [
+            'type' => 'link',
+            'name' => 'hero::base.sections.system.menus.product_assets',
+            'link' => route('extension.index', [
+                'panel' => 'hero',
+                'section' => 'system',
+                'type' => 'product-assets',
             ]),
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',

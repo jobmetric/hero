@@ -70,6 +70,7 @@ return [
                 "ticket_status" => "Ticket Statuses",
                 "group_plugins_and_modules" => "Plugins and Modules",
                 "payment_method" => "Payment Methods",
+                "product_assets" => "Product Assets",
             ],
         ],
         "report" => [
