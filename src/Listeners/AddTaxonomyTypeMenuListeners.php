@@ -5,8 +5,8 @@ namespace JobMetric\Hero\Listeners;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class AddTaxonomyTypeMenuListeners
@@ -18,7 +18,7 @@ class AddTaxonomyTypeMenuListeners
     public function handle(): void
     {
         // menu
-        TaxonomyType::define('menu')
+        TaxonomyTypeRegistry::register('menu')
             ->label('hero::base.taxonomy_type.menu.label')
             ->description('hero::base.taxonomy_type.menu.description')
             ->showDescriptionInList()
@@ -41,7 +41,7 @@ class AddTaxonomyTypeMenuListeners
                 ->select('id')
                 ->where('type', 'menu')
                 ->get()->each(function ($menu) {
-                    TaxonomyType::define('menu_' . $menu->id)
+                    TaxonomyTypeRegistry::register('menu_' . $menu->id)
                         ->changeStatusInList()
                         ->baseMedia();
                 });

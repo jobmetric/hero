@@ -3,8 +3,8 @@
 namespace JobMetric\Hero\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeDepartmentListeners
@@ -16,7 +16,7 @@ class TaxonomyTypeDepartmentListeners
     public function handle(): void
     {
         // department
-        TaxonomyType::define('department')
+        TaxonomyTypeRegistry::register('department')
             ->label('hero::base.taxonomy_type.department.label')
             ->description('hero::base.taxonomy_type.department.description')
             ->hierarchical()

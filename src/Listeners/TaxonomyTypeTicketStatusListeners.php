@@ -3,8 +3,8 @@
 namespace JobMetric\Hero\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeTicketStatusListeners
@@ -16,7 +16,7 @@ class TaxonomyTypeTicketStatusListeners
     public function handle(): void
     {
         // ticket_status
-        TaxonomyType::define('ticket_status')
+        TaxonomyTypeRegistry::register('ticket_status')
             ->label('hero::base.taxonomy_type.ticket_status.label')
             ->description('hero::base.taxonomy_type.ticket_status.description')
             ->showDescriptionInList()

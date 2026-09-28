@@ -3,7 +3,7 @@
 namespace JobMetric\Hero\Listeners;
 
 use Illuminate\Support\Facades\DB;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
 use JobMetric\Taxonomy\Models\Taxonomy;
 use Throwable;
 
@@ -28,7 +28,7 @@ class SetTaxonomyTypeLabelFieldMenuListeners
             })
             ->where('taxonomy.type', 'menu')
             ->get()->each(function ($menu) {
-                TaxonomyType::type('menu_' . $menu->id)
+                TaxonomyTypeRegistry::register('menu_' . $menu->id)
                     ->label($menu->name);
             });
     }
